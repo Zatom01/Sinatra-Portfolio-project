@@ -23,8 +23,10 @@ class ProducersController < ApplicationController
         @producer= Producer.find_by(username: params[:username])
         if @producer && @producer.authenticate(params[:password])
             session[:user_id]=@producer.id
+            flash[:message] = "You are now logged in"
             redirect '/posts'
         else
+            flash[:message] = "Username/Password Invalid"
             redirect '/login'
         end
 
@@ -33,10 +35,12 @@ class ProducersController < ApplicationController
     post '/signup' do
         if !logged_in?
             if params[:username]=="" || params[:email]=="" || params[:password]==""
+                flash[:message] = "All fields need to be filled"
                 redirect '/signup'
             else
                 @producer=Producer.create(params)
                 session[:user_id]=@producer.id
+                flash[:message] = "You are now logged in"
                 redirect '/posts'
             end
         else
@@ -75,6 +79,7 @@ class ProducersController < ApplicationController
 
     get '/logout' do
         session.clear
+        flash[:message] = "You are now logged out"
         redirect '/login'
     end
 

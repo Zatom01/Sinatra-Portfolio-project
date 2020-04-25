@@ -41,9 +41,11 @@ class MoviesController < ApplicationController
             if @producer==@movie.producer
                 if !!params[:update] && !params[:name].empty?
                     @movie.update(:name=> params[:name])
+                    flash[:message] = "Successfully updated movie name"
                     redirect '/posts/:username'
                 elsif !!params[:delete] && params[:name].empty?
                     @movie.delete
+                    flash[:message] = "Successfully deleted movie."
                     redirect '/posts/:username'
                 end
             else
