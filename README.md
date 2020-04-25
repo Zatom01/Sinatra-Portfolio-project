@@ -8,5 +8,9 @@ Installation:
 
 Clone the repo by typing "git clone https://github.com/Zatom01/Sinatra-portfolio-project.git" in your terminal. Type "bundle install" in your terminal to install all the required gems with in the Gemfile. Then type "shotgun" and go to the address provided inorder to get started
 
+Contributers Guide
+Anyone is welcome to collaborate and add additional functionalities.
 
+License 
+MIT License
 
