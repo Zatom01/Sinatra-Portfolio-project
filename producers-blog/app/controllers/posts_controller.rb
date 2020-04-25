@@ -7,8 +7,8 @@ class PostsController < ApplicationController
             redirect_if_not_logged_in
         else
             @producer=current_user
-            @posts=Post.all.last(5)
-            @movies=Movie.all.last(5)
+            @posts=Post.all.last(5).reverse
+            @movies=Movie.all.last(5).reverse
             erb :'posts/index'
         end
     end
@@ -58,6 +58,8 @@ class PostsController < ApplicationController
                 if !!params[:update] && !params[:content].empty?
                     @post.update(:content=>params[:content])
                     redirect "/posts/:username"
+                elsif !!params[:update] && params[:content].empty?
+                    redirect "posts/:username"
                 elsif params[:content].empty? && !!params[:delete]
                         @post.delete
                         redirect "/posts/:username"

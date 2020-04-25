@@ -50,7 +50,12 @@ class ProducersController < ApplicationController
         @producer=Producer.find_by(username: params[:username])
         @posts=@producer.posts.last(4)
         @movies=@producer.movies.last(4)
-        erb :'/producers/viewprofile'
+
+        if @producer==@currentproducer
+            erb :'producers/show'
+        else
+            erb :'/producers/viewprofile'
+        end
 
     end
 
