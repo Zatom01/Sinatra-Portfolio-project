@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h1>Welcome <%=@producer.username.upcase%> </h1>
+        <h1 style="font-size:20px !important;">Welcome <%=@producer.username.upcase%> </h1>
 
         <h4>Latest Posts</h4> <br>
 
@@ -9,8 +9,8 @@
             <section>
             <p><%=post.content%>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            -----&nbsp;<%=post.producer.username%>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            -----&nbsp;<a href="/posts/viewprofile/<%=post.producer.username%>"><%=post.producer.username%></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
             </section>
 
@@ -21,8 +21,8 @@
         <%@movies.each do |movie|%>
             <section>
             <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ------ &nbsp;<%=movie.producer.username%>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ------&nbsp;<a href="/posts/viewprofile/<%=movie.producer.username%>"><%=movie.producer.username%></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p></section>
 
         <%end %>
@@ -30,7 +30,7 @@
     <style>
     /* unvisited link */
     a:link {
-    color: red;
+    color: pink;
     }
 
     /* visited link */
@@ -50,5 +50,5 @@
     </style>
 
     <p style ="text-align:center"><a href="/logout">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="/posts/<%=@producer.username%>">Your Profile</a></p>
+    <a href="/posts/<%=@producer.username%>">My Profile</a></p>
 </html>

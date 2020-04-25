@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     #  to the index page with all posts/movies
     get '/posts' do
         if !logged_in?
-            redirect '/login'
+            redirect_if_not_logged_in
         else
             @producer=current_user
             @posts=Post.all.last(5)
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     get '/posts/newpost' do
         @producer=current_user
         if !logged_in?
-            redirect '/login'
+            rredirect_if_not_logged_in
         else
 
             erb :'/posts/new'
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
     post '/posts' do
         if !logged_in?
-            redirect '/login'
+            redirect_if_not_logged_in
         else
             @producer=current_user
             @producer.posts << Post.create(params)
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
     get '/posts/:username/:postid/edit' do
         if !logged_in?
-            redirect '/login'
+            redirect_if_not_logged_in
         else
             @producer=Producer.find_by(username: params[:username])
             @post=Post.find_by(id: params[:postid])
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     patch '/posts/:username/:postid' do
 
         if !logged_in?
-            redirect '/login'
+            redirect_if_not_logged_in
         else
             @producer=Producer.find_by(username: params[:username])
             @post=Post.find_by(id: params[:postid])

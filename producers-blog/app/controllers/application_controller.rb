@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "secret"
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -24,21 +25,13 @@ class ApplicationController < Sinatra::Base
     def current_user
       Producer.find(session[:user_id])
     end
-
-
-    # def redirect_if_not_logged_in
-    #   if !logged_in?
-    #     redirect "/login"
-    #   end
-    # end
-
-    # def redirect_if_logged_in
-    #   if logged_in?
-    #     redirect "/posts"
-    #   end
-    # end
-
-
   end
 
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        flash[:errors]="You must be logged into view the page"
+        redirect "/login"
+      end
+    end
 end

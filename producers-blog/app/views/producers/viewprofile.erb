@@ -1,0 +1,37 @@
+
+<h1><%=@producer.username%>'s Profile</h1>
+
+<h2>Latest Posts from <%=@producer.username%></h2>
+<%@posts.each do |post|%>
+    <p><%=post.content%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
+<%end%>
+
+<h2>Latest Movies produced from <%=@producer.username%></h2>
+<%@movies.each do |movie|%>
+    <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
+<%end%>
+
+<style>
+/* unvisited link */
+a:link {
+color: lime;
+}
+
+/* visited link */
+a:visited {
+color: yellow;
+}
+
+/* mouse over link */
+a:hover {
+color: lime;
+}
+
+/* selected link */
+a:active {
+color: blue;
+}
+</style>
+<p style ="text-align:center"><a href="/posts/<%=@currentproducer.username%>">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/posts">Go to Homepage</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/logout">Logout</a></a></p>

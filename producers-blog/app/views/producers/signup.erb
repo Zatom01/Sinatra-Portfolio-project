@@ -1,9 +1,32 @@
+<style>
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: yellow;
+}
+
+/* mouse over link */
+a:hover {
+  color: lime ;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
 
 
-<h1>Jot down your info<h2>
+<h1>Jot down your info</h1>
 <form method="POST" action="/signup">
     <label>Username: </label> <input type="text" name="username" class="searchBar"><br><br>
     <label>Email: </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email" class="searchBar"><br><br>
     <label>Password: </label> &nbsp;<input type="password" name="password"><br>
     <input type="submit" value="create" class="button">
 </form>
+
+<h2>Already a member? <a href="/login">Login</a></h2>

@@ -44,6 +44,16 @@ class ProducersController < ApplicationController
         end
     end
 
+    get '/posts/viewprofile/:username' do
+        redirect_if_not_logged_in
+        @currentproducer=current_user
+        @producer=Producer.find_by(username: params[:username])
+        @posts=@producer.posts.last(4)
+        @movies=@producer.movies.last(4)
+        erb :'/producers/viewprofile'
+
+    end
+
     get '/posts/:username' do
         if logged_in?
             if params[:username]==current_user.username
@@ -53,7 +63,7 @@ class ProducersController < ApplicationController
                 redirect '/login'
             end
         else
-            redirect '/login'
+            redirect_if_not_logged_in
         end
     end
 

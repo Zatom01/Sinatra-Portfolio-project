@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
     get '/posts/newmovie' do
         if !logged_in?
-            redirect '/login'
+            redirect_if_not_logged_in
         else
             @producer=current_user
             erb :'/movies/new'
@@ -13,14 +13,14 @@ class MoviesController < ApplicationController
             current_user.movies << Movie.create(params)
             redirect '/posts'
         else
-            redirect '/login'
+            redirect_if_not_logged_in
         end
     end
 
     get '/movies/:username/:movie_id/edit' do
 
         if !logged_in?
-            redirect '/login'
+            redirect_if_not_logged_in
         else
             @producer=Producer.find_by(username: params[:username])
             @movie=Movie.find_by(id: params[:movie_id])
@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
 
     patch '/movie-posts/:username/:movie_id' do
         if !logged_in?
-            redirect '/login'
+            rredirect_if_not_logged_in
         else
             @producer=Producer.find_by(username: params[:username])
             @movie=Movie.find_by(id: params[:movie_id])
