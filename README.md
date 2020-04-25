@@ -12,5 +12,5 @@ Contributers Guide
 Anyone is welcome to collaborate and add additional functionalities.
 
 License 
-MIT License
+producers-blog/LICENSE
 
