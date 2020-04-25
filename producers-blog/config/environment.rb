@@ -9,4 +9,8 @@ ActiveRecord::Base.establish_connection(
 )
 
 require './app/controllers/application_controller'
+
+
+# config.time_zone = 'Eastern Time (US & Canada)'
+# config.active_record.default_timezone = :local
 require_all 'app'

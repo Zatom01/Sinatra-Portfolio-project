@@ -1,0 +1,30 @@
+
+<style>
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: yellow;
+}
+
+/* mouse over link */
+a:hover {
+  color: lime ;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+
+<form method="POST" action='/posts/newmovie'>
+    <label>Name of your movie</label><br><br>
+    <input type="text" name="name" size="100" class="searchBar"><br><br>
+    <input type="submit" value="post" class="button"><br><br>
+</form>
+
+<a href="/posts/<%=@producer.username%>">Go to Profile</a>

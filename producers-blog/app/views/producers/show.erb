@@ -1,0 +1,51 @@
+<html>
+    <body>
+
+        <h1>Member since : <%=@producer.created_at.to_datetime.strftime("%A, %b %d")%><h1>
+
+        <h2>Total Posts: <%=@producer.posts.count%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+
+        <%@producer.posts.each do |post|%>
+            <p><a href="/posts/<%=@producer.username%>/<%=post.id%>/edit"><%=post.content%></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%>
+
+        <%end%>
+
+        <h2>Movies Produced: <%=@producer.movies.count%></h2>
+        <%@producer.movies.each do |movie|%>
+            <p><a href="/movies/<%=@producer.username%>/<%=movie.id%>/edit"><%=movie.name%></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%>
+
+        <%end%>
+
+
+
+        <br><br>
+
+        </body>
+        <style>
+            /* unvisited link */
+            a:link {
+            color: lime;
+            }
+
+            /* visited link */
+            a:visited {
+            color: yellow;
+            }
+
+            /* mouse over link */
+            a:hover {
+            color: lime;
+            }
+
+            /* selected link */
+            a:active {
+            color: blue;
+            }
+        </style>
+        <p style ="text-align:center"><a href="/posts">Goto HomePage</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/posts/newpost" >Create Post</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/posts/newmovie">Create Movie</a></p>
+
+</html>

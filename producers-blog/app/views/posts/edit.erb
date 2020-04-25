@@ -1,0 +1,42 @@
+<style>
+            /* unvisited link */
+            a:link {
+            color: lime;
+            }
+
+            /* visited link */
+            a:visited {
+            color: yellow;
+            }
+
+            /* mouse over link */
+            a:hover {
+            color: lime;
+            }
+
+            /* selected link */
+            a:active {
+            color: blue;
+            }
+        </style>
+<h1><%=@producer.username%></h1>
+
+
+<form method= "POST" action = "/posts/<%=@producer.username%>/<%=@post.id%>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <h3 style="color:yellow;"><strong><%=@post.content%><strong>&nbsp;&nbsp;&nbsp;</h3><br><br>
+    <label>Update: </label>
+    <input type="text" name="content" >
+    <input type="submit" name = "update" value="update" class="button">
+    <input type="submit" name="delete" value="delete" class="button">
+
+
+</form>
+
+
+
+    <br><br>
+    <p style ="text-align:center">
+    <a href="/posts/<%=@producer.username%>">Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/posts/<%=@producer.username%>">Homepage</a>
+    </p>

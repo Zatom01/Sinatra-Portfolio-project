@@ -1,0 +1,54 @@
+<html>
+    <body>
+        <h1>Welcome <%=@producer.username.upcase%> </h1>
+
+        <h4>Latest Posts</h4> <br>
+
+
+        <%@posts.each do |post|%>
+            <section>
+            <p><%=post.content%>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            -----&nbsp;<%=post.producer.username%>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
+            </section>
+
+        <%end%><br><br>
+
+
+        <h4>Latest Movies Produced</h4><br>
+        <%@movies.each do |movie|%>
+            <section>
+            <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ------ &nbsp;<%=movie.producer.username%>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p></section>
+
+        <%end %>
+    </body>
+    <style>
+    /* unvisited link */
+    a:link {
+    color: red;
+    }
+
+    /* visited link */
+    a:visited {
+    color: yellow;
+    }
+
+    /* mouse over link */
+    a:hover {
+    color: lime;
+    }
+
+    /* selected link */
+    a:active {
+    color: blue;
+    }
+    </style>
+
+    <p style ="text-align:center"><a href="/logout">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a href="/posts/<%=@producer.username%>">Your Profile</a></p>
+</html>

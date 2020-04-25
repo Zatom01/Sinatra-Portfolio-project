@@ -4,35 +4,51 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
   }
 
   html, body {
+
     height: 100%;
     width: 100%;
+    color: rgb(150, 196, 64);
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
+    background-image: url("https://geomarketing.com/wp-content/uploads/2015/03/Hollywood-Lights.jpg");
+    color: rgb(150, 196, 64);
+    font-family: Optima;
     line-height: 18px;
+
   }
 
   .wrapper {
-    background: #fff;
+
+
+    border-color: rgb(173, 243, 10);
+    box-shadow: aquamarine;
+    background: rgba(0,0,0,0.5);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
+    margin: 8% auto;
+    max-width: 1000px;
+    padding: 2.25%;
+    width: 30%;
+    height: 70%;
+    color: aqua;
+
+
   }
 
   h1 {
+    text-align: center;
     font-size: 36px;
     line-height: 54px;
+    color: white;
+
+
   }
 
   h2 {
@@ -40,27 +56,48 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
+    color: aqua;
+
+
   }
 
   h3 {
+
     font-size: 18px;
     line-height: 36px;
+
+
   }
+
+  img {
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+
+   }
+
 
   p {
     margin-bottom: 18px;
+    color: aliceblue;
+
   }
 
   .main {
     overflow: hidden;
+
   }
 
   .content {
+
     float: left;
     width: 60%; /* 480px / 800px */
+
+
   }
 
   .sidebar {
+
     background: #eee;
     border: 1px solid #ccc;
     float: right;
@@ -70,37 +107,93 @@
 
   .sidebar ul {
     font-size: 14px;
+
   }
 
   .branding {
     clear: both;
   }
 
+  .button
+  {
+    font-size: 20px;
+    color:green;
+  }
+
+  .searchBar {
+    width: 500px;
+    border-radius: 0px;
+    border: 1px solid #f3efee;
+    height:40px;
+    box-shadow: none;
+
+  }
+  .searchBar:focus {
+    box-shadow: 10px 10px greenyellow;
+  }
+
+  .white-font
+  {
+    color: #eee;
+    font-family: sans-serif red;
+  }
+
   footer.branding {
+    text-align: center;
+    color: whitesmoke;
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+
   }
+
+  a {
+    color: #2c87f0;
+  }
+  a:visited {
+    color: #636;
+  }
+  a:hover, a:active, a:focus {
+    color:#c33;
+  }
+
+  .post-color{
+    color: lightseagreen;
+  }
+
+
+
 }
 
 @media screen and (max-width: 600px) {
+
+
+
   .wrapper {
+
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     width: auto;
+
+
   }
 
   .content, .sidebar {
+
     float: none;
     width: 100%;
+
+
   }
 
   .sidebar {
+
     background: transparent;
     border: none;
     border-top: 2px solid #ccc;
     padding: 0;
+
   }
 
   h1 {
@@ -109,7 +202,30 @@
   }
 
   h2 {
+    color: white;
     font-size: 18px;
     line-height: 24px;
   }
+
+  .scroll {
+
+    margin:4px, 4px;
+    padding:4px;
+    background-color: green;
+    width: 500px;
+    height: 110px;
+    overflow-x: hidden;
+    overflow-x: auto;
+    text-align:justify;
+  }
+  a {
+    color: #2c87f0;
+  }
+  a:visited {
+    color: #636;
+  }
+  a:hover, a:active, a:focus {
+    color:#c33;
+  }
+}
 }
