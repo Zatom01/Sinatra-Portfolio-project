@@ -8,8 +8,6 @@ class ProducersController < ApplicationController
         end
     end
 
-
-
     get '/signup' do
         if !logged_in?
             erb :'/producers/signup'

@@ -8,14 +8,14 @@
 
         <%@producer.posts.each do |post|%>
             <p><a href="/posts/<%=@producer.username%>/<%=post.id%>/edit"><%=post.content%></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%>
+            <%=Time.parse(post.created_at.to_s).in_time_zone('Pacific Time (US & Canada)').strftime("%A, %b %d at %I:%M%p")%>
 
         <%end%>
 
         <h2>Movies Produced: <%=@producer.movies.count%></h2>
         <%@producer.movies.each do |movie|%>
             <p><a href="/movies/<%=@producer.username%>/<%=movie.id%>/edit"><%=movie.name%></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%>
+            <%=Time.parse(movie.created_at.to_s).in_time_zone('Pacific Time (US & Canada)').strftime("%A, %b %d at %I:%M%p")%>
 
         <%end%>
 

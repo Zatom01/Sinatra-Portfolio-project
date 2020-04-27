@@ -11,10 +11,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             -----&nbsp;
             <a href="/posts/viewprofile/<%=post.producer.username%>"><%=post.producer.username%></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
+            &nbsp;&nbsp;&nbsp;&nbsp;<%=Time.parse(post.created_at.to_s).in_time_zone('Pacific Time (US & Canada)').strftime("%A, %b %d at %I:%M%p")%></p>
             </section>
-        <%end%><br><br>
+        <%end%><br><br></p>
 
 
         <h4>Latest Movies Produced</h4><br>
