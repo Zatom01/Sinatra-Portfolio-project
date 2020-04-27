@@ -6,7 +6,7 @@
     <p><%=post.content%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
 <%end%>
 
-<h2>Latest Movies produced from <%=@producer.username%></h2>
+<h2>Latest Movies produced by <%=@producer.username%></h2>
 <%@movies.each do |movie|%>
     <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
 <%end%>

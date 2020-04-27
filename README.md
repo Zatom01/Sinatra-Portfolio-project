@@ -12,5 +12,6 @@ Contributers Guide
 Anyone is welcome to collaborate and add additional functionalities.
 
 License 
-producers-blog/LICENSE
+https://github.com/Zatom01/Sinatra-portfolio-project/blob/master/producers-blog/LICENSE
+
 
