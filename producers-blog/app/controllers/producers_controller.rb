@@ -54,7 +54,8 @@ class ProducersController < ApplicationController
         @producer=Producer.find_by(username: params[:username])
         @posts=@producer.posts.last(4)
         @movies=@producer.movies.last(4)
-
+        @views=(@producer.views) + 1
+        @producer.update(:views=> @views)
         if @producer==@currentproducer
             erb :'producers/show'
         else
@@ -64,9 +65,12 @@ class ProducersController < ApplicationController
     end
 
     get '/posts/:username' do
+
         if logged_in?
             if params[:username]==current_user.username
                 @producer=current_user
+                @views=@producer.views
+
                 erb :'/producers/show'
             else
                 redirect '/login'

@@ -2,6 +2,7 @@
     <body>
 
         <h1>Member since : <%=@producer.created_at.to_datetime.strftime("%A, %b %d")%><h1>
+        <h1>Your Profile views: <%=@views%></h2>
 
         <h2>Total Posts: <%=@producer.posts.count%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 

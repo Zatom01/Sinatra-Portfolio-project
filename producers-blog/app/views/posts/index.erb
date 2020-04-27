@@ -2,18 +2,18 @@
     <body>
         <h1 style="font-size:20px !important;">Welcome <%=@producer.username.upcase%> </h1>
 
-        <h4>Latest Posts</h4> <br>
 
+        <h4>Latest Posts</h4> <br>
 
         <%@posts.each do |post|%>
             <section>
             <p><%=post.content%>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            -----&nbsp;<a href="/posts/viewprofile/<%=post.producer.username%>"><%=post.producer.username%></a>
+            -----&nbsp;
+            <a href="/posts/viewprofile/<%=post.producer.username%>"><%=post.producer.username%></a>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
             </section>
-
         <%end%><br><br>
 
 
@@ -27,28 +27,29 @@
 
         <%end %>
     </body>
-    <style>
-    /* unvisited link */
-    a:link {
-    color: pink;
-    }
+        <style>
+            /* unvisited link */
+            a:link {
+            color: pink;
+            }
 
-    /* visited link */
-    a:visited {
-    color: yellow;
-    }
+            /* visited link */
+            a:visited {
+            color: yellow;
+            }
 
-    /* mouse over link */
-    a:hover {
-    color: lime;
-    }
+            /* mouse over link */
+            a:hover {
+            color: lime;
+            }
 
-    /* selected link */
-    a:active {
-    color: blue;
-    }
-    </style>
+            /* selected link */
+            a:active {
+            color: blue;
+            }
+        </style>
 
-    <p style ="text-align:center"><a href="/logout">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="/posts/<%=@producer.username%>">My Profile</a></p>
+    <p style ="text-align:center"><a href="/posts/<%=@producer.username%>">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a href="/logout">Logout</a>
+    </p>
 </html>
