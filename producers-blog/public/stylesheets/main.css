@@ -31,7 +31,7 @@
 
     border-color: rgb(173, 243, 10);
     box-shadow: aquamarine;
-    background: rgba(0,0,0,0.5);
+    background: rgba(128, 100, 100, 0.5);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -90,12 +90,11 @@
   }
 
   h4{
+    font-size: 20px;
     text-align: center;
+
   }
 
-  p{
-    text-align: center;
-  }
 
   img {
     background-repeat: no-repeat;
@@ -111,34 +110,10 @@
 
 
   p {
-
-    margin-bottom: 18px;
+    text-align: center;
     color: aliceblue;
 
   }
-
-  /* a {
-    color: #2c87f0;
-  }
-  /* unvisited link
-  a:link {
-  color: pink;
-  }
-
-  /* visited link
-  a:visited {
-  color: yellow;
-  }
-
-  /* mouse over link
-  a:hover {
-  color: lime;
-  }
-
-  /* selected link
-  a:active {
-  color: blue;
-  } */
 
 
   .main {
@@ -207,27 +182,6 @@
   }
 
 
-
-
-
-
-  /* old a tags  */
-/*
-  a {
-    color: #2c87f0;
-  }
-  a:visited {
-    color: #636;
-  }
-  a:hover, a:active, a:focus {
-    color:#c33;
-  }
-
-  .post-color{
-    color: lightseagreen;
-  } */
-
-
 #titel {
   float:left;
   width:220px;
@@ -272,6 +226,7 @@ h5 {
 
   }
 
+
   h1 {
     font-size: 24px;
     line-height: 36px;
@@ -288,50 +243,5 @@ h5 {
     text-align: center;
   }
 
-
-  /* unvisited link */
-  /* a:link {
-  color: pink;
-  }*/
-  /* a {
-    color: #2c87f0;
-  }
-
-  a:visited {
-  color: yellow;
-  }
-
-
-  a:hover {
-  color: lime;
-  }
-
-
-  a:active {
-  color: blue;
-  }  */
-
-
-  /* .scroll {
-
-    margin:4px, 4px;
-    padding:4px;
-    background-color: green;
-    width: 500px;
-    height: 110px;
-    overflow-x: hidden;
-    overflow-x: auto;
-    text-align:justify;
-  } */
-  /* a {
-    color: #2c87f0;
-  }
-  a:visited {
-    color: rgb(144, 236, 24);
-  }
-  a:hover, a:active, a:focus {
-    color:rgb(243, 8, 184);
-  } */
-  /* unvisited link */
 
 }

@@ -3,8 +3,6 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
-  # config.time_zone = 'Pacific Time (US & Canada)'
-  # config.active_record.default_timezone = :local
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'

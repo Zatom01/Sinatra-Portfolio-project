@@ -1,19 +1,24 @@
 <html>
     <body>
-        <h1 style="font-size:20px !important;">Welcome <%=@producer.username.upcase%> </h1>
+        <h1 style="font-size:25px !important;">Welcome <%=@producer.username.upcase%>
+        </h1>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
         <h4>Latest Posts</h4> <br>
+
 
         <%@posts.each do |post|%>
             <section>
             <p><%=post.content%>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            -----&nbsp;
-            <a href="/posts/viewprofile/<%=post.producer.username%>"><%=post.producer.username%></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;<%=Time.parse(post.created_at.to_s).in_time_zone('Pacific Time (US & Canada)').strftime("%A, %b %d at %I:%M%p")%></p>
-            </section>
-        <%end%><br><br></p>
+            -----&nbsp;<a href="/posts/viewprofile/<%=post.producer.username%>"><%=post.producer.username%></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%>
+            </section></p><br>
+
+        <%end%>
 
 
         <h4>Latest Movies Produced</h4><br>
@@ -22,33 +27,33 @@
             <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             ------&nbsp;<a href="/posts/viewprofile/<%=movie.producer.username%>"><%=movie.producer.username%></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p></section>
+            <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></section></p><br>
 
         <%end %>
     </body>
-        <style>
-            /* unvisited link */
-            a:link {
-            color: pink;
-            }
+    <style>
+    /* unvisited link */
+    a:link {
+    color: pink;
+    }
 
-            /* visited link */
-            a:visited {
-            color: yellow;
-            }
+    /* visited link */
+    a:visited {
+    color: yellow;
+    }
 
-            /* mouse over link */
-            a:hover {
-            color: lime;
-            }
+    /* mouse over link */
+    a:hover {
+    color: lime;
+    }
 
-            /* selected link */
-            a:active {
-            color: blue;
-            }
-        </style>
+    /* selected link */
+    a:active {
+    color: blue;
+    }
+    </style>
 
-    <p style ="text-align:center"><a href="/posts/<%=@producer.username%>">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="/logout">Logout</a>
-    </p>
+    <p style ="text-align:center"><a href="/posts/<%=@producer.username%>">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="posts/listusers">Producers List</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/logout">Logout</a></p>
 </html>

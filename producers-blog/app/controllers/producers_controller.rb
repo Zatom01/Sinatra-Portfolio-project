@@ -8,6 +8,8 @@ class ProducersController < ApplicationController
         end
     end
 
+
+
     get '/signup' do
         if !logged_in?
             erb :'/producers/signup'
@@ -46,29 +48,35 @@ class ProducersController < ApplicationController
         end
     end
 
+    get '/posts/listusers' do
+       @producers=Producer.all
+       @currentproducer=current_user
+       erb :'producers/listusers'
+    end
+
     get '/posts/viewprofile/:username' do
         redirect_if_not_logged_in
         @currentproducer=current_user
         @producer=Producer.find_by(username: params[:username])
-        @posts=@producer.posts.last(4)
-        @movies=@producer.movies.last(4)
-        @views=(@producer.views) + 1
-        @producer.update(:views=> @views)
-        if @producer==@currentproducer
+        @posts=@producer.posts.last(4).reverse
+        @movies=@producer.movies.last(4).reverse
+        if @producer==current_user
+            @views=current_user.views
             erb :'producers/show'
         else
+            @views=@producer.views + 1
+            @producer.update(:views=>@views)
             erb :'/producers/viewprofile'
         end
 
     end
 
     get '/posts/:username' do
-
         if logged_in?
             if params[:username]==current_user.username
                 @producer=current_user
-                @views=@producer.views
-
+                @posts=@producer.posts.last(5).reverse
+                @movies=@producer.movies.last(5).reverse
                 erb :'/producers/show'
             else
                 redirect '/login'

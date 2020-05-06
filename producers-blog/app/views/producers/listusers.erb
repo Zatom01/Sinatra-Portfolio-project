@@ -1,0 +1,33 @@
+
+<style>
+    /* unvisited link */
+    a:link {
+    color: lime;
+    }
+
+    /* visited link */
+    a:visited {
+    color: yellow;
+    }
+
+    /* mouse over link */
+    a:hover {
+    color: lime;
+    }
+
+    /* selected link */
+    a:active {
+    color: blue;
+    }
+</style>
+<h1>Total users: <%=@producers.count%></h1><br>
+<p style="line-height: 2">
+<%@producers.each do |producer|%>
+        <span style="font-size: 15pt"><a href="/posts/viewprofile/<%=producer.username%>"><%=producer.username%></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<%end%><br><br><br>
+</p>
+
+
+<p style ="text-align:center"><a href="/posts">Go to Homepage</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/posts/<%=@currentproducer.username%>">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/logout">Logout</a></a><br>

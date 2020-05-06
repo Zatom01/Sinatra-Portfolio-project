@@ -1,14 +1,14 @@
 
-<h1><%=@producer.username%>'s Profile views: <%=@views%></h1>
+<h1><%=@producer.username%>'s Profile view <%=@producer.views%></h1>
 
 <h2>Latest Posts from <%=@producer.username%></h2>
 <%@posts.each do |post|%>
-    <p><%=post.content%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
+    <p><%=post.content%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=post.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p><br>
 <%end%>
 
 <h2>Latest Movies produced by <%=@producer.username%></h2>
 <%@movies.each do |movie|%>
-    <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p>
+    <p><%=movie.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on <%=movie.created_at.to_datetime.strftime("%A, %b %d at %I:%M%p")%></p><br>
 <%end%>
 
 <style>

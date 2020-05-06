@@ -17,12 +17,12 @@ class PostsController < ApplicationController
     get '/posts/newpost' do
         @producer=current_user
         if !logged_in?
-            redirect_if_not_logged_in
+            rredirect_if_not_logged_in
         else
+
             erb :'/posts/new'
         end
     end
-
 
     post '/posts' do
         if !logged_in?
